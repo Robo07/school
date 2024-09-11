@@ -12,15 +12,29 @@ count = int(input("Zadaj pocet ziakov: "))
 rounds = int(input("Zadaj pocet kolov: "))
 
 while (int(rounds) > 0):
-  if (len(prepick) == len(names)):
-    prepick = []
+    while (count > len(names)):
+        print("Zadal si viac ziakov ako je v zozname")
+        count = int(input("Zadaj pocet ziakov: "))
+    
+    pick = []
+
+    if (len(prepick) == len(names)):
+        prepick = []
     print("round done")
 
-  pick = random.choice(names)
+    if(len(names) - len(prepick) < count):
+        print("Zostalo malo ziakov")
+        pick = names
+        pick = [fruit for fruit in pick if fruit not in prepick]
+        print(pick)
+    
+    choice = random.choice(names)
 
-  while (pick in prepick):
-    pick = random.choice(names)
-  prepick.append(pick)
+    while (len(pick) < count):
+        while (choice in prepick):
+            choice = random.choice(names)
+        prepick.append(choice)
+        pick.append(choice)
 
-  print(pick)
-  rounds = rounds - 1
+    print(pick)
+    rounds = rounds - 1
