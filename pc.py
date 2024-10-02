@@ -27,7 +27,7 @@ enemy_list = [enemy_pos]
 
 # Bullet settings
 bullet_size = 20
-bullet_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)    )
+bullet_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 bullet_list = []
 
 # Speed settings
